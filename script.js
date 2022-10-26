@@ -22,7 +22,7 @@ var userCharPool = [];
 var securePassword = [];
 
 var userInputs =  function() { 
-    numUserChars = prompt("\n\nHow many characters would you like to include in your password? \nPlease enter a number between 8 and 128:");          
+    numUserChars = prompt("\n\nHow many characters would you like to include in your password? \n\nPlease enter a number between 8 and 128:");          
     
     while (numUserChars <8 || numUserChars>128) { 
         numUserChars = prompt("Your selection is invalid. Please enter a number between 8 and 128.");
