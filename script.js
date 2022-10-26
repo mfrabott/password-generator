@@ -19,7 +19,7 @@ var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-", "_"];
 var numUserChars = "";
 var userCharPool = [];
-var password =[];
+var securePassword = [];
 
 var userInputs =  function() { 
     numUserChars = prompt("Please choose the number of characters - between 8 and 128 - for your Password:");          
@@ -43,17 +43,25 @@ var userInputs =  function() {
 var randomizePassword = function() {
     function randomNumber(max) {
         return Math.floor(Math.random() * max);
-}
+    }
     for ( i=0; i<numUserChars; i++) {
-        password = password.concat(userCharPool[randomNumber(userCharPool.length)])
+        securePassword = securePassword.concat(userCharPool[randomNumber(userCharPool.length)])
+    }
+    stringPassword = securePassword.join("");
 }
-    password = password.join("");
+
+var clear = function() {
+    userCharPool = [];
+    securePassword = [];
+    stringPassword = "";
 }
 
 var generatePassword = function(){
+    clear();
     userInputs(); 
     randomizePassword();
-    return password;
+    return stringPassword;
 }
 
-writePassword()
+// var test=generatePassword();
+// console.log(test)
