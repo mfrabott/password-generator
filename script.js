@@ -22,21 +22,27 @@ var userCharPool = [];
 var securePassword = [];
 
 var userInputs =  function() { 
-    numUserChars = prompt("Please choose the number of characters - between 8 and 128 - for your Password:");          
+    numUserChars = prompt("\n\nHow many characters would you like to include in your password? \nPlease enter a number between 8 and 128:");          
+    
     while (numUserChars <8 || numUserChars>128) { 
         numUserChars = prompt("Your selection is invalid. Please enter a number between 8 and 128.");
     }
-    if (confirm("Would you like to include lowercase characters in your password?")){
-        userCharPool = userCharPool.concat(lowerLetters);
-    }
-    if (confirm("Would you like to include uppercase characters in your password?")){
-        userCharPool = userCharPool.concat(upperLetters);
-    }
-    if (confirm("Would you like to include numbers in your password?")){
-        userCharPool = userCharPool.concat(numbers);
-    }
-    if (confirm("Would you like to include special characters in your password?")){
-        userCharPool = userCharPool.concat(specialChar);
+
+    while (userCharPool.length <1) { 
+        alert("Please choose at least one set of characters to include in your password from the prompts.");
+        
+        if (confirm("\n\nWould you like to include lowercase characters in your password? \n\n'OK' for yes. \n'Cancel' for no. ")){
+            userCharPool = userCharPool.concat(lowerLetters);
+        }
+        if (confirm("\n\nWould you like to include uppercase characters in your password? \n\n'OK' for yes. \n'Cancel' for no. ")){
+            userCharPool = userCharPool.concat(upperLetters);
+        }
+        if (confirm("\n\nWould you like to include numbers in your password? \n\n'OK' for yes. \n'Cancel' for no. ")){
+            userCharPool = userCharPool.concat(numbers);
+        }
+        if (confirm("\n\nWould you like to include special characters in your password? \n\n'OK' for yes. \n'Cancel' for no. ")){
+            userCharPool = userCharPool.concat(specialChar);
+        }
     }
 }
 
@@ -62,6 +68,3 @@ var generatePassword = function(){
     randomizePassword();
     return stringPassword;
 }
-
-// var test=generatePassword();
-// console.log(test)
