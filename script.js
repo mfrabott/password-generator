@@ -22,9 +22,15 @@ var numUserChars = "";
 var userInputs =  function() { 
     
     numUserChars = prompt("\n\nHow many characters would you like to include in your password? \nPlease enter a number between 8 and 128:");          
-    
+    if (numUserChars === null) {
+        return
+    }
+
     while (numUserChars <8 || numUserChars>128) { 
         numUserChars = prompt("\n\nYour selection is invalid. \nPlease enter a number between 8 and 128:");
+        if (numUserChars === null) {
+            return
+        }
     }
 
     while (userCharPool.length <1) { 
