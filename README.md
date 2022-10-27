@@ -39,7 +39,7 @@ THEN the password is either displayed in an alert or written to the page
 As indicated above, I was presented with some starter code and asked to code a password generator meeting the above listed criteria. This project required me to break down the challenge into smaller pieces and write code specific to each spec. I ran into problems with getting the program to run more than once until I added a function to clear the previous results. I also had to find ways to evaluate whether the user selected the appropriate criteria and to create opportunities for the user to correct invalid inputs. I also found out how to allow the user to escape at the number selection prompts for improved user experience.
 
 ## Screenshot
-![Deployed Password Generator screenshot - Desktop](/assets/images/password-generator-screenshot.png)
+![Deployed Password Generator screenshot - Desktop](./Assets/Images/password-generator-screenshot.png)
 
 
 ## Deployed Application Link
