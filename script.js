@@ -31,11 +31,10 @@ var userInputs =  function() {
     if (numUserChars === null) {
         return
     }
-
-    // Evaluates if chosen number is valid. So long as selection is invalid, new prompt is issued.
-    while (numUserChars <8 || numUserChars>128) { 
-        numUserChars = prompt("\n\nYour password must contain between 8 and 128 characters. \nPlease enter a number between 8 and 128 below:\n");
-        
+    
+    // Evaluates if chosen number is valid. So long as selection is invalid, new prompt is issued. User escape enabled.
+    while (isNaN(numUserChars) || numUserChars <8 || numUserChars>128) { 
+        numUserChars = prompt("\n\nYour entry is invalid. \nPlease enter a number between 8 and 128 below:\n");    
         if (numUserChars === null) {
             return
         }
